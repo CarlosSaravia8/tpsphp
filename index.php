@@ -21,20 +21,20 @@ if ( isset( $_GET['view'] ) ) {
 			<article class="post">
 				<header>
 					<h2 class="post-title">
-						<a href="?view=<?php echo $post['id']; ?>"><?php echo $post['title']; ?></a>
+						<a href="?view=<?php echo $post['id']; ?>"><?php echo $post['titulo']; ?></a>
 					</h2>
 				</header>
 				<div class="post-content">
 					<?php if ( $post_found ): ?>
-						<?php echo $post['content']; ?>
+						<?php echo $post['resumen']; ?>
 					<?php else: ?>
-						<?php echo $post['excerpt']; ?>
+						<?php echo $post['resumen']; ?>
 					<?php endif; ?>
 				</div>
 				<footer>
 					<span class="post-date">
 						Publicada en:
-						<?php	echo strftime( '%d %b %Y', strtotime( $post['published_on'] ) );	?>
+						<?php	echo strftime( '%d %b %Y', strtotime( $post['fecha_publicacion'] ) );	?>
 					</span>
 				</footer>
 			</article>

@@ -13,4 +13,3 @@ define('DB_PASSWORD', '');
 define('DB_DATABASE', 'tps');
 define('DB_PORT', '3307');
 
->?
