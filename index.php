@@ -34,7 +34,7 @@ if ( isset( $_GET['view'] ) ) {
 				<footer>
 					<span class="post-date">
 						Publicada en:
-						<?php	echo strftime( '%d %b %Y', strtotime( $post['fecha_publicacion'] ) );	?>
+						<?php	echo date( 'd F Y', strtotime( $post['fecha_publicacion'] ) );	?>
 					</span>
 				</footer>
 			</article>
