@@ -9,7 +9,7 @@ if ( ! is_logged_in() ) {
 $action = isset( $_GET['action'] ) ? $_GET['action'] : '';
 
 switch ( $action ) {
-	case 'list-posts': {
+	case 'listado-post': {
 		if ( isset( $_GET['delete-post'] ) ) {
 			$id = $_GET['delete-post'];
 			if ( ! check_hash( 'delete-post-' . $id, $_GET['hash'] ) ) {
@@ -17,15 +17,15 @@ switch ( $action ) {
 			}
 
 			delete_post( $id );
-			redirect_to( 'admin?action=list-posts' );
+			redirect_to( 'admin?action=listado-post' );
 			die();
 		}
 
 		$all_posts = get_all_posts();
-		require 'templates/list-posts.php';
+		require 'templates/listapost.php';
 		break;
 	}
-	case 'new-post': {
+	case 'nuevo-post': {
 		$error = false;
 		$title = '';
 		$excerpt = '';
@@ -48,7 +48,7 @@ switch ( $action ) {
 			}
 		}
 
-		require 'templates/new-post.php';
+		require 'templates/nuevopost.php';
 		break;
 	}
 	default: {
